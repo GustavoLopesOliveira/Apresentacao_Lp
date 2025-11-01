@@ -1,0 +1,26 @@
+program ProjetoPrincipal;
+
+uses
+  Tipos, Funcoes, Ponteiro, ClasseAluno, SysUtils;
+
+var
+  turma: TTurma;
+  media: Real;
+  x: Integer;
+  aluno: TAlunoClasse;
+begin
+  turma[1].Nome := 'Ana'; turma[1].Nota := 8;
+  turma[2].Nome := 'Bruno'; turma[2].Nota := 7;
+  turma[3].Nome := 'Clara'; turma[3].Nota := 9;
+
+  media := Media(turma);
+  Writeln('Media: ', media:0:2);
+
+  x := 5;
+  Incrementar(@x);
+  Writeln('Valor incrementado: ', x);
+
+  aluno := TAlunoClasse.Create('Davi', 10);
+  Writeln(aluno.Info);
+  Readln;
+end.

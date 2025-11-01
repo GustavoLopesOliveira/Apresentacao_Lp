@@ -1,0 +1,11 @@
+program HelloWorld;
+
+{$APPTYPE CONSOLE}
+
+uses
+  HelloUnit;
+
+begin
+  PrintHello;
+  ReadLn; // Para segurar a janela do console aberta
+end.

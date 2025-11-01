@@ -1,0 +1,30 @@
+﻿program TestCNPJ;
+
+uses
+  System.SysUtils, System.RegularExpressions;
+
+function isValidCnpj(const CNPJ: string): Boolean;
+const
+  CNPJ_REGEX = '^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$';
+begin
+  Result := TRegEx.IsMatch(CNPJ, CNPJ_REGEX);
+end;
+
+var
+  cnpj1, cnpj2: string;
+begin
+  cnpj1 := '12.345.678/0001-90';
+  cnpj2 := '98.765.432/0001-10';
+
+  if isValidCnpj(cnpj1) then
+    Writeln(cnpj1, ' é válido.')
+  else
+    Writeln(cnpj1, ' é inválido.');
+
+  if isValidCnpj(cnpj2) then
+    Writeln(cnpj2, ' é válido.')
+  else
+    Writeln(cnpj2, ' é inválido.');
+
+  ReadLn;
+end.

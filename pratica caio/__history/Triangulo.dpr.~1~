@@ -1,0 +1,23 @@
+﻿program Triangulo;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+var
+  i, j, linhas: Integer;
+begin
+  linhas := 5; // número de linhas do triângulo
+
+  for i := 1 to linhas do
+  begin
+    for j := 1 to i do
+      Write('*'); // imprime * na mesma linha
+    Writeln; // pula para a próxima linha
+  end;
+
+  Writeln;
+  Writeln('Pressione Enter para sair...');
+  Readln;
+end.
